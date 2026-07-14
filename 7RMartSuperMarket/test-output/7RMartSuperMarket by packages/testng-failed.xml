@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [7RMartSuperMarket by packages]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="testscript(failed)">
+    <classes>
+      <class name="testscript.LogOutTest">
+        <methods>
+          <include name="verifyTheUserIsAbleToLogOutSuccessfullyFromDashboard"/>
+          <include name="initializedriver"/>
+        </methods>
+      </class> <!-- testscript.LogOutTest -->
+      <class name="testscript.ManageOfferCodeTest">
+        <methods>
+          <include name="verifyTheUserIsAbleToUpdateManageOfferCodePage"/>
+          <include name="initializedriver"/>
+        </methods>
+      </class> <!-- testscript.ManageOfferCodeTest -->
+      <class name="testscript.ManageNewsTest">
+        <methods>
+          <include name="verifyTheUserIsAbleToUpdateManageNews"/>
+          <include name="initializedriver"/>
+        </methods>
+      </class> <!-- testscript.ManageNewsTest -->
+      <class name="testscript.ManageCategoryTest">
+        <methods>
+          <include name="userIsAbleToEnterManageCateogoryPage"/>
+          <include name="initializedriver"/>
+        </methods>
+      </class> <!-- testscript.ManageCategoryTest -->
+      <class name="testscript.LoginTest">
+        <methods>
+          <include name="verifyTheUserIsAbleToLoginValidCredentials"/>
+          <include name="verifyTheUserIsAbleToLoginIncorrectUserNameAndValidPassword"/>
+          <include name="verifyTheUserIsAbleToLoginCorrectUserNameAndInValidPassword"/>
+          <include name="verifyTheUserIsAbleToLoginInValidCredentials"/>
+          <include name="initializedriver"/>
+        </methods>
+      </class> <!-- testscript.LoginTest -->
+      <class name="testscript.ManageDeliveryBoyTest">
+        <methods>
+          <include name="verifyTheUserIsAbleToUpdateManageDeliveryBoyPage"/>
+          <include name="initializedriver"/>
+        </methods>
+      </class> <!-- testscript.ManageDeliveryBoyTest -->
+      <class name="testscript.AdminTest">
+        <methods>
+          <include name="verifyTheUserIsAbleToAddNewItemInAdminUsersPage"/>
+          <include name="initializedriver"/>
+        </methods>
+      </class> <!-- testscript.AdminTest -->
+    </classes>
+  </test> <!-- testscript(failed) -->
+</suite> <!-- Failed suite [7RMartSuperMarket by packages] -->
