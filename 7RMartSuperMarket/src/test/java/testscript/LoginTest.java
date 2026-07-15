@@ -10,7 +10,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base{
 	
-@Test
+@Test(description="testcase is for loging in to webpage")
 
 
 public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {

@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class LogOutTest extends Base{
 	
-	@Test
+	@Test(description="testcase is for checking logout successfully")
 	
 	
 	public void verifyTheUserIsAbleToLogOutSuccessfullyFromDashboard() throws IOException {

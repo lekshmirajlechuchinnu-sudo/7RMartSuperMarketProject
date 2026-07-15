@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class ManageDeliveryBoyTest extends Base {
-	@Test
+	@Test(description="testcase is for managing DeliveryBoyTest")
 
 	public void verifyTheUserIsAbleToUpdateManageDeliveryBoyPage() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "loginpage");

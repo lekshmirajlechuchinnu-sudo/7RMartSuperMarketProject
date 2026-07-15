@@ -10,7 +10,7 @@ import page.ManageOfferCodePage;
 import utilities.ExcelUtility;
 
 public class ManageOfferCodeTest extends Base {
-	@Test
+	@Test(description="testcase is for managing offer")
 	
 	public void verifyTheUserIsAbleToUpdateManageOfferCodePage() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "loginpage");

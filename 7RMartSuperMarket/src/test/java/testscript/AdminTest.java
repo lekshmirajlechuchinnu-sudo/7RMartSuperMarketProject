@@ -12,7 +12,7 @@ import utilities.FakerUtility;
 
 public class AdminTest extends Base {
 
-	@Test
+	@Test(description="testcase is for entering data to admin page")
 
 	public void verifyTheUserIsAbleToAddNewItemInAdminUsersPage() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "loginpage");
