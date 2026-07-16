@@ -10,7 +10,7 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class ManageCategoryTest extends Base {
-	@Test(description="testcase is for managing CategoryTest")
+	@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"},description="testcase is for managing CategoryTest")
 
 	public void userIsAbleToEnterManageCateogoryPage() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "loginpage");

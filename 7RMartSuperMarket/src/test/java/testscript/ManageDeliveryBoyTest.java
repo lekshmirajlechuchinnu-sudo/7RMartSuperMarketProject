@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class ManageDeliveryBoyTest extends Base {
-	@Test(description="testcase is for managing DeliveryBoyTest")
+	@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"},description="testcase is for managing DeliveryBoyTest")
 
 	public void verifyTheUserIsAbleToUpdateManageDeliveryBoyPage() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "loginpage");

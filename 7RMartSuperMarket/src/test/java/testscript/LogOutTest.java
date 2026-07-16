@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class LogOutTest extends Base{
 	
-	@Test(description="testcase is for checking logout successfully")
+	@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"},description="testcase is for checking logout successfully")
 	
 	
 	public void verifyTheUserIsAbleToLogOutSuccessfullyFromDashboard() throws IOException {
