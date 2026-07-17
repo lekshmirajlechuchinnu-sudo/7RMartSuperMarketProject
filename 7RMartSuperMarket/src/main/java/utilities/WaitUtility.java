@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WaitUtility {
 	
 	public static final int IMPLICITWAIT=10;
-	public static final int  EXPLICITWAIT=10;
+	public static final int  EXPLICITWAIT=30;
 	public static final int FLUENT_WAIT=30;
 	public static final int POLL_WAIT=5;
 	

@@ -8,14 +8,20 @@ import org.openqa.selenium.support.ui.Select;
 
 public class PageUtility {
 
-	public void click(WebDriver driver, WebElement adminusers) {
+	public void click(WebDriver driver, WebElement AdminPageMoreInfo) {
 		Actions action = new Actions(driver);
-		action.click(adminusers).perform();
+		action.click(AdminPageMoreInfo).perform();
 
 	}
 	public void clicknews(WebDriver driver, WebElement managenews) {
 		Actions action = new Actions(driver);
 		action.click(managenews).perform();
+
+	}
+	
+	public void clickdelivery(WebDriver driver, WebElement savedeliveryboy) {
+		Actions action = new Actions(driver);
+		action.click(savedeliveryboy).perform();
 
 	}
 

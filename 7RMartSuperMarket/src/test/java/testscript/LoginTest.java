@@ -5,12 +5,15 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constant;
+import page.HomePage;
 import page.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base{
+	HomePage homepage;
 	
-@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"},description="testcase is for loging in to webpage")
+@Test(description="testcase is for loging in to webpage")
 
 
 public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {
@@ -19,11 +22,13 @@ public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "loginpage");
 		String passwordvalue = ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.enterSignIn();
-		boolean homepage = loginpage.isDashBoardDisplayed();
-		Assert.assertTrue(homepage);
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.enterSignIn();
+		boolean assertmessage = loginpage.isDashBoardDisplayed();
+		Assert.assertTrue(assertmessage,Constant.LOGINVALIDCREDENTIALS);
+		
+
 
 	}
 
@@ -38,9 +43,8 @@ public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {
 		loginpage.enterUserName(usernamevalue);
 		loginpage.enterPassword(passwordvalue);
 		loginpage.enterSignIn();
-		boolean alertmessage = loginpage.isAlertDisplayed();
-		Assert.assertTrue(alertmessage);
-
+		boolean assertmessage = loginpage.isDashBoardDisplayed();
+		Assert.assertTrue(assertmessage,Constant.LOGININVALIDCREDENTIALS);
 	}
 
 	@Test
@@ -54,9 +58,8 @@ public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {
 		loginpage.enterUserName(usernamevalue);
 		loginpage.enterPassword(passwordvalue);
 		loginpage.enterSignIn();
-		boolean alertmessage = loginpage.isAlertDisplayed();
-		Assert.assertTrue(alertmessage);
-
+		boolean assertmessage = loginpage.isDashBoardDisplayed();
+		Assert.assertTrue(assertmessage,Constant.LOGININVALIDCREDENTIALS);
 	}
 
 	@Test
@@ -70,9 +73,8 @@ public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {
 		loginpage.enterUserName(usernamevalue);
 		loginpage.enterPassword(passwordvalue);
 		loginpage.enterSignIn();
-		boolean alertmessage = loginpage.isAlertDisplayed();
-		Assert.assertTrue(alertmessage);
-
+		boolean assertmessage = loginpage.isDashBoardDisplayed();
+		Assert.assertTrue(assertmessage,Constant.LOGININVALIDCREDENTIALS);
 	}
 }
 

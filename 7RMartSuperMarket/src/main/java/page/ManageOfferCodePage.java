@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import constants.Constant;
 import utilities.FileUploadUtility;
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageOfferCodePage {
 	
@@ -25,8 +26,8 @@ public class ManageOfferCodePage {
 	WebElement password;
 	@FindBy(css = "button.btn.btn-dark.btn-block")
 	WebElement signin;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-offercode'and@class='small-box-footer']")
-	WebElement offercode;
+	//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-offercode'and@class='small-box-footer']")
+	//WebElement ManageOfferCodeInfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement newclick;
 	@FindBy(xpath="//input[@id='offer_code']")
@@ -42,32 +43,38 @@ public class ManageOfferCodePage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alert;
 	
-	public void clickManageOfferCodeInfo()
+	/*public void clickManageOfferCodeInfo()
 	{
-		offercode.click();
-	}
+		ManageOfferCodeInfo.click();
+	}*/
 	
-	public void newClick()
+	public ManageOfferCodePage newClick()
 	{
+		WaitUtility obj=new WaitUtility();
+		obj.waitForElementToBeClickable(driver, newclick);
 		newclick.click();
+		return this;
 	}
-	public void enterOfferCodeOrderUsePercentAmountDescription(String enteroffer,int enterpercent,int enteramount)
+	public ManageOfferCodePage enterOfferCodeOrderUsePercentAmountDescription(String enteroffer,int enterpercent,int enteramount)
 	{
 		offercodeenter.sendKeys(enteroffer);
 		percent.sendKeys(String.valueOf(enterpercent));
 		amount.sendKeys(String.valueOf(enteramount));
+		return this;
 		
 		
 		
 	}
 	
-	public void fileUpload() {
+	public ManageOfferCodePage fileUpload() {
 		FileUploadUtility obj = new FileUploadUtility();
 		obj.fileUploadUsingSendKeys(choose, Constant.IMAGE);
+		return this;
 	}
-	public void clickSave() {
+	public ManageOfferCodePage clickSave() {
 		PageUtility obj = new PageUtility();
 		obj.click(driver, save);
+		return this;
 	}
 	
 	public boolean isAlertDisplayed() {

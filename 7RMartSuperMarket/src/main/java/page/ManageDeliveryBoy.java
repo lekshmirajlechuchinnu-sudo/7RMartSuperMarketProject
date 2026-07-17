@@ -2,10 +2,12 @@ package page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageDeliveryBoy {
 
@@ -22,12 +24,12 @@ public class ManageDeliveryBoy {
 	WebElement password;
 	@FindBy(css = "button.btn.btn-dark.btn-block")
 	WebElement signin;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy'and@class='small-box-footer']")
-	WebElement deliveryboy;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy'and@class='small-box-footer']")
+	//WebElement ManageDeliveryBoyMoreInfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement newclick;
 	@FindBy(xpath = "//input[@id='name']")
-	WebElement name;
+	WebElement namedata;
 	@FindBy(xpath = "//input[@id='email']")
 	WebElement emailvalue;
 	@FindBy(xpath="//input[@id='phone']")
@@ -38,35 +40,64 @@ public class ManageDeliveryBoy {
 	WebElement username1;
 	@FindBy(xpath = "//input[@id='password']")
 	WebElement password1;
-	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-danger'and@name='Create']")
-	WebElement save;
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement savedeliveryboy;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alert;
 
-	public void clickManageDeliveryBoyPageMoreInfo() {
+	/*public void clickManageDeliveryBoyPageMoreInfo() {
 		
-		deliveryboy.click();
-}
+		ManageDeliveryBoyMoreInfo.click();
+}*/
 
-	public void newButtonClick() {
+	public ManageDeliveryBoy newButtonClick() {
+		WaitUtility obj=new WaitUtility();
+		obj.waitForElementToBeClickable(driver, newclick);
 		newclick.click();
+		return this;
 	}
 
-	public void enterPhoneEmailNameAddressUserNamepassword(String entername,String enteremail,int number,String enteraddress,String enterusername,String enterpassword)
+	public ManageDeliveryBoy enterNameValue(String entername)
 	{
-		name.sendKeys(entername);	
-		emailvalue.sendKeys(enteremail);
+		namedata.sendKeys(entername);	
+		return this;
+
+	}
+	public ManageDeliveryBoy enterEmail(String email)
+	{
+		emailvalue.sendKeys(email);
+		return this;
+		
+	}
+	
+	public ManageDeliveryBoy enterPhone(int number)
+	{
 		phone.sendKeys(String.valueOf(number));
-		addressvalue.sendKeys(enteraddress);
-		username1.sendKeys(enterusername);
-		password1.sendKeys(enterpassword);
-
+		return this;
+	}
+	public  ManageDeliveryBoy  enterAddress(String address)
+	{
+		addressvalue.sendKeys(address);
+		return this;
+	}
+	public  ManageDeliveryBoy enterUserName(String username)
+	{
+		username1.sendKeys(username);
+		return this;
+	}
+	public  ManageDeliveryBoy enterPassword(String password)
+	{
+		password1.sendKeys(password);
+		return this;
+		
 	}
 
-	public void clickSaveButton() {
-		PageUtility obj = new PageUtility();
-		obj.clickSave(driver, save);
+	public ManageDeliveryBoy clickdelivery() {
+		PageUtility obj=new PageUtility();
+		obj.clickdelivery(driver, savedeliveryboy);
+		return this;
 	}
+	
 
 	public boolean isAlertDisplayed() {
 		return alert.isDisplayed();

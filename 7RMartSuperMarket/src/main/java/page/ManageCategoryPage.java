@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import constants.Constant;
 import utilities.FileUploadUtility;
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageCategoryPage {
 
@@ -18,8 +19,8 @@ public class ManageCategoryPage {
 	WebElement password;
 	@FindBy(css = "button.btn.btn-dark.btn-block")
 	WebElement signin;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'and @class='small-box-footer']")
-	WebElement managecateogory;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'and @class='small-box-footer']")
+	//WebElement managecateogoryinfo;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
 	WebElement newclick;
 	@FindBy(xpath = "//input[@name='category']")
@@ -38,31 +39,38 @@ public class ManageCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickManageCateogoryInfo() {
-		managecateogory.click();
-	}
+	/*public void clickManageCateogoryInfo() {
+		managecateogoryinfo.click();
+	}*/
 
-	public void clickNew() {
+	public ManageCategoryPage clickNew() {
+		WaitUtility obj=new WaitUtility();
+		obj.waitForElementToBeClickable(driver, newclick);
 		newclick.click();
+		return this;
 	}
 
-	public void enterCategoryValue(String categoryvalue) {
+	public ManageCategoryPage enterCategoryValue(String categoryvalue) {
 		category.sendKeys(categoryvalue);
+		return this;
 	}
 
-	public void clickDiscount() {
+	public ManageCategoryPage clickDiscount() {
 		PageUtility obj = new PageUtility();
 		obj.clickDiscount(driver,selctgroup );
+		return this;
 	}
 
-	public void fileUpload() {
+	public ManageCategoryPage fileUpload() {
 		FileUploadUtility obj = new FileUploadUtility();
 		obj.fileUploadUsingSendKeys(choose, Constant.IMAGE);
+		return this;
 	}
 
-	public void clickSave() {
+	public ManageCategoryPage clickSave() {
 		PageUtility obj = new PageUtility();
 		obj.click(driver, save);
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

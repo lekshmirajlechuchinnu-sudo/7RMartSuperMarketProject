@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageNewsPage {
 
@@ -15,10 +16,10 @@ public class ManageNewsPage {
 	WebElement username;
 	@FindBy(xpath = "//input[@placeholder='Password']")
 	WebElement password;
-	@FindBy(css = "button.btn.btn-dark.btn-block")
+	@FindBy(xpath = "//button[contains(@class,'btn-dark')]")
 	WebElement signin;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news'and@class='small-box-footer']")
-	WebElement managenews;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news'and@class='small-box-footer']")
+	//WebElement ManageNewsInfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement newsupdate;
 	@FindBy(xpath = "//textarea[@id='news']")
@@ -33,22 +34,27 @@ public class ManageNewsPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickManageNewsInfo() {
+	/*public void clickManageNewsInfo() {
 		PageUtility obj = new PageUtility();
-		obj.clicknews(driver, managenews);
-	}
+		obj.clicknews(driver,ManageNewsInfo);
+	}*/
 
-	public void enterNewUpdate() {
+	public ManageNewsPage enterNewUpdate() {
+		WaitUtility obj=new WaitUtility();
+		obj.waitForElementToBeClickable(driver, newsupdate);
 		newsupdate.click();
+		return this;
 	}
 
-	public void enterAnyNews(String news) {
+	public ManageNewsPage enterAnyNews(String news) {
 		enternews.sendKeys(news);
+		return this;
 	}
 
-	public void clickSave() {
+	public ManageNewsPage clickSave() {
 		PageUtility obj = new PageUtility();
 		obj.clickSave(driver, save);
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class LoginPage {
 	public WebDriver driver;
 
@@ -12,7 +14,7 @@ public class LoginPage {
 	WebElement username;
 	@FindBy(xpath = "//input[@placeholder='Password']")
 	WebElement password;
-	@FindBy(css = "button.btn.btn-dark.btn-block")
+	@FindBy(xpath = "//button[contains(@class,'btn-dark')]")
 	WebElement signin;
 	@FindBy(xpath = "//p[text()='Dashboard']")
 	WebElement dashboard;
@@ -25,18 +27,21 @@ public class LoginPage {
 
 	}
 
-	public void enterUserName(String usernamevalue) {
+	public LoginPage enterUserName(String usernamevalue) {
 		username.sendKeys(usernamevalue);
+		return this;
 	}
 
-	public void enterPassword(String passwordvalue) {
+	public LoginPage enterPassword(String passwordvalue) {
 		password.sendKeys(passwordvalue);
+		return this;
 	}
 
-	public void enterSignIn() {
-		// WaitUtility obj=new WaitUtility();
-		// obj.waitForElementToBeClickable(driver, signin);
+	public HomePage enterSignIn() {
+		//WaitUtility obj=new WaitUtility();
+		//obj.waitForElementToBeClickable(driver, signin);
 		signin.click();
+		return new HomePage(driver);
 	}
 
 	public boolean isDashBoardDisplayed() {
@@ -47,11 +52,11 @@ public class LoginPage {
 		return alert.isDisplayed();
 	}
 
-	public void enterValidaCredentials(String usernamevalue, String passwordvalue) {
+	/*public void enterValidaCredentials(String usernamevalue, String passwordvalue) {
 		username.sendKeys(usernamevalue);
 		password.sendKeys(passwordvalue);
 		signin.click();
-	}
+	}*/
 
 
 

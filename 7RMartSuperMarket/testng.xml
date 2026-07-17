@@ -9,7 +9,8 @@
   
     <classes>
     <class name="testscript.ManageNewsTest"></class>
-      <!-- <class name="testscript.LogOutTest"/>
+    <class name="testscript.AdminTest"></class>
+        <!--<class name="testscript.LogOutTest"/>
       <class name="testscript.LoginTest">
       <methods> 
       <include name="verifyTheUserIsAbleToLoginIncorrectUserNameAndValidPassword"></include>

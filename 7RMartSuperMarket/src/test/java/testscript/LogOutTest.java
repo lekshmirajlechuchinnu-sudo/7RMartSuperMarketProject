@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import page.LogOutPage;
+import page.HomePage;
 import page.LoginPage;
 import utilities.ExcelUtility;
 
@@ -25,7 +25,7 @@ public class LogOutTest extends Base{
 		loginpage.enterSignIn();
 		boolean homepage = loginpage.isDashBoardDisplayed();
 		Assert.assertTrue(homepage);
-		LogOutPage logoutpage = new LogOutPage(driver);
+		HomePage logoutpage = new HomePage(driver);
 		logoutpage.clickAdmin();
 		logoutpage.clickLogout();
 
