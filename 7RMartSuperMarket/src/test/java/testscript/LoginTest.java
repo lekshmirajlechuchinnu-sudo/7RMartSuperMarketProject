@@ -40,9 +40,11 @@ public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(2, 0, "loginpage");
 		String passwordvalue = ExcelUtility.getStringData(2, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.enterSignIn();
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue).enterSignIn();
+		//loginpage.enterPassword(passwordvalue);
+		//loginpage.enterUserName(usernamevalue);
+		//loginpage.enterPassword(passwordvalue);
+		//loginpage.enterSignIn();
 		boolean assertmessage = loginpage.isDashBoardDisplayed();
 		Assert.assertTrue(assertmessage,Constant.LOGININVALIDCREDENTIALS);
 	}
@@ -55,9 +57,11 @@ public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(3, 0, "loginpage");
 		String passwordvalue = ExcelUtility.getStringData(3, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.enterSignIn();
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue).enterSignIn();
+		//loginpage.enterPassword(passwordvalue);
+		//loginpage.enterUserName(usernamevalue);
+		//loginpage.enterPassword(passwordvalue);
+		//loginpage.enterSignIn();
 		boolean assertmessage = loginpage.isDashBoardDisplayed();
 		Assert.assertTrue(assertmessage,Constant.LOGININVALIDCREDENTIALS);
 	}
@@ -70,9 +74,11 @@ public void verifyTheUserIsAbleToLoginValidCredentials() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(4, 0, "loginpage");
 		String passwordvalue = ExcelUtility.getStringData(4, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.enterSignIn();
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue).enterSignIn();
+		//loginpage.enterPassword(passwordvalue);
+		//loginpage.enterUserName(usernamevalue);
+		//loginpage.enterPassword(passwordvalue);
+		//loginpage.enterSignIn();
 		boolean assertmessage = loginpage.isDashBoardDisplayed();
 		Assert.assertTrue(assertmessage,Constant.LOGININVALIDCREDENTIALS);
 	}

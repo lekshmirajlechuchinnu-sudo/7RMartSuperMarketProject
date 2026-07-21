@@ -13,7 +13,7 @@ public class FileUploadUtility {
 	
 	public void fileUploadUsingSendKeys(WebElement choose,String filepath)
 	{
-		choose.sendKeys("C:\\Users\\gokul\\OneDrive\\Dokumen\\vegetable.jpg");
+		choose.sendKeys(filepath);
 	}
 	
 	

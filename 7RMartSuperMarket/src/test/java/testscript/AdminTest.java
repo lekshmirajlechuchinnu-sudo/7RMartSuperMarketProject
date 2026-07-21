@@ -24,7 +24,7 @@ public class AdminTest extends Base {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
 		homepage=loginpage.enterSignIn();
-		//AdminPage adminpageusers = new AdminPage(driver);
+		//AdminPage adminpage = new AdminPage(driver);
 		adminpage=homepage.clickAdminPageMoreInfo();
 		//adminpage.enterNewTab();
 		//String usernamevalue1 = ExcelUtility.getStringData(1, 0, "adminpage");
@@ -33,7 +33,7 @@ public class AdminTest extends Base {
 		FakerUtility faker=new FakerUtility();
 		String usernamevalue1=faker.generateCategory();
 		String passwordvalue1=faker.generateCategory();
-		adminpage.enterAdminUsersCredentials(usernamevalue1, passwordvalue1, value).enterNewTab().clickSave();
+		adminpage.enterNewTab().enterAdminUsersCredentials(usernamevalue1, passwordvalue1, value).clickSave();
 		//adminpage.clickSave();
 		boolean homepage = adminpage.isAlertDisplayed();
 		Assert.assertTrue(homepage,Constant.ENTERVALUEADMINPAGE);

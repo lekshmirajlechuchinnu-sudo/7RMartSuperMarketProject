@@ -32,7 +32,7 @@ public class ManageOfferCodeTest extends Base {
 		manageoffercode=homepage.clickManageOfferCodeInfo();
 		//manageoffercode.newClick();
 		//String offercodeneter=ExcelUtility.getStringData(1, 0, "offerpage");
-    	manageoffercode.enterOfferCodeOrderUsePercentAmountDescription(offercodeenter, percent, amount).fileUpload().clickSave().newClick();
+    	manageoffercode.newClick().enterOfferCodeOrderUsePercentAmountDescription(offercodeenter, percent, amount).fileUpload().clickSave();
 		//manageoffercode.fileUpload();
 		//manageoffercode.clickSave();
 		//manageoffercode.isAlertDisplayed();

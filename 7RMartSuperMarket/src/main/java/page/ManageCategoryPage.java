@@ -70,6 +70,8 @@ public class ManageCategoryPage {
 	public ManageCategoryPage clickSave() {
 		PageUtility obj = new PageUtility();
 		obj.click(driver, save);
+		WaitUtility obj1=new WaitUtility();
+		obj1.waitForElementToBeClickable(driver, save);
 		return this;
 	}
 

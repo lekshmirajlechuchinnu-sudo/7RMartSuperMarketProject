@@ -86,17 +86,7 @@ public ManageOfferCodePage clickManageOfferCodeInfo()
 
 
 	
-	public boolean isDashBoardDisplayed() {
-		return dashboard.isDisplayed();
-	}
-
-	public void clickAdmin() {
-		admin.click();
-	}
-
-	public void clickLogout() {
-		logout.click();
-	}
+	
 
 
 }

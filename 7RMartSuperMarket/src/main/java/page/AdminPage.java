@@ -42,9 +42,10 @@ public class AdminPage {
 
 	}
 
-	/*public void clickAdminPageMoreInfo() {
+	/*public AdminPage clickAdminPageMoreInfo() {
 		PageUtility obj = new PageUtility();
 		obj.click(driver, AdminPageMoreInfo);
+		return this;
 	}*/
 	PageUtility pageutility=new PageUtility();
 	WaitUtility wait=new WaitUtility();
@@ -53,6 +54,7 @@ public class AdminPage {
 		wait.waitForElementToBeClickable(driver, newtab);
 		pageutility.click(driver, newtab);
 		return this;
+		
 	}
 	
 	

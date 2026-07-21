@@ -30,7 +30,7 @@ public class ManageOfferCodePage {
 	//WebElement ManageOfferCodeInfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement newclick;
-	@FindBy(xpath="//input[@id='offer_code']")
+	@FindBy(xpath="//input[@placeholder='Enter the Offer Code']")
 	WebElement offercodeenter;
 	@FindBy(xpath="//input[@placeholder='Percentage']")
 	WebElement percent;
@@ -49,11 +49,13 @@ public class ManageOfferCodePage {
 	}*/
 	
 	public ManageOfferCodePage newClick()
-	{
-		WaitUtility obj=new WaitUtility();
-		obj.waitForElementToBeClickable(driver, newclick);
-		newclick.click();
+	{   
+		WaitUtility obj1=new WaitUtility();
+		obj1.waitForElementToBeClickable(driver, newclick);
+		PageUtility obj = new PageUtility();
+		obj.clickDiscount(driver,newclick );
 		return this;
+		
 	}
 	public ManageOfferCodePage enterOfferCodeOrderUsePercentAmountDescription(String enteroffer,int enterpercent,int enteramount)
 	{

@@ -26,8 +26,8 @@ public class ManageNewsTest extends Base {
 		managenewspage=homepage.clickManageNewsInfo();
 		String newsdata = ExcelUtility.getStringData(1, 0, "newspage");
 		managenewspage.enterNewUpdate().enterAnyNews(newsdata).clickSave();
-		managenewspage.enterAnyNews(newsdata);
-		managenewspage.clickSave();
+		//managenewspage.enterAnyNews(newsdata);
+		//managenewspage.clickSave();
 		boolean homepage = managenewspage.isAlertDisplayed();
 		Assert.assertTrue(homepage,Constant.ENTERVALUEMANAGENEWS);
 

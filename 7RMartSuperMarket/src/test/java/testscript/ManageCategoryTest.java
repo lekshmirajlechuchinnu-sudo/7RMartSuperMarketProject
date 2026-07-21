@@ -26,9 +26,11 @@ public class ManageCategoryTest extends Base {
 		loginpage.enterPassword(passwordvalue).enterUserName(usernamevalue);
 		homepage=loginpage.enterSignIn();
 		//ManageCategoryPage managecategoeypage = new ManageCategoryPage(driver);
+		managecategoeypage=homepage.clickManageCateogoryInfo();
+		//managecategoeypage.clickNew();
 		FakerUtility faker=new FakerUtility();
 		String categoryvalue=faker.generateCategory();
-		managecategoeypage=homepage.clickManageCateogoryInfo();
+		//managecategoeypage=homepage.clickManageCateogoryInfo();
 		managecategoeypage.clickNew().enterCategoryValue(categoryvalue).clickDiscount().fileUpload().clickSave();
 		//String categoryvalue = ExcelUtility.getStringData(1, 0, "categorypage");
 		//managecategoeypage.enterCategoryValue(categoryvalue);
